@@ -1,0 +1,6 @@
+.htaccess
+.htpasswd
+
+### Composer ###
+composer.phar
+/vendor/

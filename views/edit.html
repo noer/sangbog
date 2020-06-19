@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <form action="edit.php" method="POST">
+        <table>
+            <tbody>
+            <tr>
+                <td>Sangnr.: {{ nr }}</td>
+                <td rowspan="7">  </td>
+                <!--<td rowspan="7"> Orig.Sang:<br><textarea name="orig" cols="60" rows="35">{{ orig }}</textarea> </<td>-->
+            </tr>
+            <tr>
+                <td> Dur: <input type="text" name="dur" value="{{ dur }}"> </td>
+            </tr>
+            <tr>
+                <td>
+                    {% if ref %}
+                    Findes p&aring; Gr&oslash;nlandsk/Dansk <a href="edit.php?song_id={{ ref }}">her</a><input type="hidden" name=ref_id value={{ ref }}>
+                    {% else %}
+                    Findes p&aring; Gr&oslash;nlandsk/Dansk som nr.: <input type="text" name="ref">
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td> Melodi:<br> <textarea name="melodi" cols="60" rows="5">{{ melodi | raw }}</textarea> </td>
+            </tr>
+            <tr>
+                <td> Forfatter:<br> <textarea name="forfatter" cols="60" rows="5">{{ forfatter | raw }}</textarea> </td>
+            </tr>
+            <tr>
+                <td> Kommentar:<br> <textarea name="kommentar" cols="60" rows="5">{{ kommentar | raw }}</textarea> </td>
+            </tr>
+            <tr>
+                <td> Sang:<br> <textarea name="sang" cols="60" rows="20">{{ sang | raw }}</textarea> </td>
+            </tr>
+            </tbody>
+        </table><br>
+        <input type="hidden" name="id" value="{{ id }}">
+        <input type="submit" name="sub" value="Send">
+    </form>
+
+{% endblock %}

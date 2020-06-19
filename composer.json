@@ -1,0 +1,15 @@
+{
+    "name": "jnoer/sangbog",
+    "description": "Ebeneser Sangbogen",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesper Noer",
+            "email": "jesper@noerit.gl"
+        }
+    ]
+}

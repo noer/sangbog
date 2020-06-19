@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    {% for song in songs %}
+    <table border="0" cellpadding="1" cellspacing="1">
+        <tr>
+            <td>{{ song.nr }} - {{ song.title }}</td>
+            <td><a href="show.php?song_id={{ song.id }}">Vis</a></td>
+            <td><a href="edit.php?id={{ song.id }}">Ret</a></td>
+        </tr>
+    </table>
+    {% endfor %}
+{% endblock %}
